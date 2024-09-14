@@ -65,6 +65,7 @@ BEGIN_MESSAGE_MAP(C이상한메일Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(buttonNum_1, &C이상한메일Dlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -100,6 +101,8 @@ BOOL C이상한메일Dlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	button1.Create(_T("실행"), WS_CHILD | WS_VISIBLE, { 10,10,80,40 }, this, buttonNum_1);
+	edit1.Create(WS_CHILD | WS_VISIBLE | WS_BORDER | ES_MULTILINE | ES_WANTRETURN, { 10,50,400,300 }, this, editNum_1);
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -153,3 +156,216 @@ HCURSOR C이상한메일Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+void C이상한메일Dlg::OnBnClickedButton1()
+{
+	int del_x = 65535 / GetSystemMetrics(SM_CXSCREEN), del_y = 65535 / GetSystemMetrics(SM_CYSCREEN);
+	LPTSTR text_1, tmp;
+	text_1 = (LPTSTR)malloc((edit1.GetWindowTextLength() + 1) * sizeof(LPTSTR));
+	if (!text_1) return;
+	edit1.GetWindowText(text_1, edit1.GetWindowTextLength() + 1);
+	tmp = text_1;
+
+	while (*tmp)
+	{
+		switch (*tmp)
+		{
+		case L'C':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'F':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[5] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[5] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'H':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[7] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[7] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'J':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[9] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[9] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'K':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'M':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[12] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[12] * del_x, grid_y[0] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'N':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[0] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[0] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'P':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'Q':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[3] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[3] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'R':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[4] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[4] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'S':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[5] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[5] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'T':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[6] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[6] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'W':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[9] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[9] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'X':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'Y':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[11] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[11] * del_x, grid_y[1] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'0':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[0] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[0] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'1':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[1] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[1] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'2':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'3':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[3] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[3] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'4':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[4] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[4] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'5':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[5] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[5] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'6':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[6] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[6] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'7':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[7] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[7] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'8':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[8] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[8] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'9':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[9] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[9] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'@':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'&':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[12] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[12] * del_x, grid_y[2] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'-':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[0] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[0] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'#':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[2] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'%':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[4] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[4] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'+':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[8] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[8] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		case L'=':
+			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			mouse_event(MOUSEEVENTF_LEFTUP | MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE, grid_x[10] * del_x, grid_y[3] * del_y, 0, 0);
+			Sleep(50);
+			break;
+		default:
+			break;
+		}
+		++tmp;
+	}
+
+	free(text_1);
+}
